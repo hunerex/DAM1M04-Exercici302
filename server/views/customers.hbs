@@ -1,0 +1,24 @@
+{{> header}}
+{{> menu}}
+
+<h2>Listado de clientes (primeros 25)</h2>
+<div class="customers">
+    {{#each customers}}
+    <div class="customer-card">
+        <h3>{{this.first_name}} {{this.last_name}}</h3>
+        <p>Email: {{this.email}}</p>
+        <h4>Últimos 5 alquileres:</h4>
+        {{#if this.rentals.length}}
+        <ul>
+            {{#each this.rentals}}
+            <li>{{this.rental_date}} - {{this.title}} (ID: {{this.rental_id}})</li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <p>No tiene alquileres.</p>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>
+
+{{> footer}}

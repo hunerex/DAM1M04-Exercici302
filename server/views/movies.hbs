@@ -1,0 +1,15 @@
+{{> header}}
+{{> menu}}
+
+<h2>Listado de películas (primeras 15)</h2>
+<div class="all-movies">
+    {{#each movies}}
+    <div class="movie-item">
+        <h3>{{this.title}} ({{this.release_year}})</h3>
+        <p>{{this.description}}</p>
+        <p><strong>Actores:</strong> {{this.actors}}</p>
+    </div>
+    {{/each}}
+</div>
+
+{{> footer}}

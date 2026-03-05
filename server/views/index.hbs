@@ -1,0 +1,26 @@
+{{> header}}
+{{> menu}}
+
+<section>
+    <h2>Películas destacadas</h2>
+    <div class="movie-list">
+        {{#each movies}}
+        <div class="movie-card">
+            <h3>{{this.title}} ({{this.release_year}})</h3>
+            <img src="/public/imatges/lol.png" alt="Carátula de {{this.title}}" class="thumbnail">
+            <p><strong>Actores:</strong> {{this.actors}}</p>
+        </div>
+        {{/each}}
+    </div>
+</section>
+ 
+<section>
+    <h2>Categorías</h2>
+    <ul class="category-list">
+        {{#each categories}}
+        <li>{{this.name}}</li>
+        {{/each}}
+    </ul>
+</section>
+
+{{> footer}}
