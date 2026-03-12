@@ -1,24 +1,33 @@
 {{> header}}
 {{> menu}}
 
-<h2>Listado de clientes (primeros 25)</h2>
-<div class="customers">
-    {{#each customers}}
-    <div class="customer-card">
-        <h3>{{this.first_name}} {{this.last_name}}</h3>
-        <p>Email: {{this.email}}</p>
-        <h4>Últimos 5 alquileres:</h4>
-        {{#if this.rentals.length}}
-        <ul>
-            {{#each this.rentals}}
-            <li>{{this.rental_date}} - {{this.title}} (ID: {{this.rental_id}})</li>
-            {{/each}}
-        </ul>
-        {{else}}
-        <p>No tiene alquileres.</p>
-        {{/if}}
-    </div>
-    {{/each}}
-</div>
+<h2>Clients (25 primers) amb els seus 5 primers lloguers</h2>
+
+<table border="1" cellpadding="8" style="border-collapse: collapse; width:100%;">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Darrers lloguers</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each customers}}
+        <tr>
+            <td>{{first_name}} {{last_name}}</td>
+            <td>{{email}}</td>
+            <td>
+                <ul>
+                    {{#each rentals}}
+                    <li>{{film_title}} ({{rental_date}})</li>
+                    {{else}}
+                    <li>No té lloguers</li>
+                    {{/each}}
+                </ul>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
 
 {{> footer}}

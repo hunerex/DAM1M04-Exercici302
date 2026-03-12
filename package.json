@@ -1,21 +1,18 @@
 {
   "name": "dam1m04-exercici302",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Web amb dades de MySQL (Sakila)",
+  "main": "server/app.js",
   "scripts": {
-  "dev": "nodemon server/app.js"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js"
+  },
   "dependencies": {
-    "express": "^5.2.1",
+    "express": "^4.18.2",
     "hbs": "^4.2.0",
-    "mysql2": "^3.19.0"
+    "mysql2": "^3.6.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.0.1"
   }
 }

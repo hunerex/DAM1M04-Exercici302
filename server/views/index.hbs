@@ -1,24 +1,26 @@
 {{> header}}
 {{> menu}}
 
-<section>
-    <h2>Películas destacadas</h2>
+<h2>Benvingut a Sakila Movies</h2>
+
+<section class="movies">
+    <h3>Primeres 5 pel·lícules</h3>
     <div class="movie-list">
         {{#each movies}}
         <div class="movie-card">
-            <h3>{{this.title}} ({{this.release_year}})</h3>
-            <img src="/public/imatges/lol.png" alt="Carátula de {{this.title}}" class="thumbnail">
-            <p><strong>Actores:</strong> {{this.actors}}</p>
+            <img src="/imatges/movie{{film_id}}.png" alt="{{title}}">
+            <h4>{{title}} ({{release_year}})</h4>
+            <p><strong>Actors:</strong> {{actors}}</p>
         </div>
         {{/each}}
     </div>
 </section>
- 
-<section>
-    <h2>Categorías</h2>
-    <ul class="category-list">
+
+<section class="categories">
+    <h3>Primeres 5 categories</h3>
+    <ul>
         {{#each categories}}
-        <li>{{this.name}}</li>
+        <li>{{name}}</li>
         {{/each}}
     </ul>
 </section>
